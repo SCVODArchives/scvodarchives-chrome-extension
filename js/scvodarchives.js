@@ -15,16 +15,24 @@ let updatePanel = (data) => {
         return;
     }
     if (data.stream.type === "live"){
+        let t;
         loadingEl.classList.add("hide-top");
         createEl("a", "", { "href": "https://twitch.tv/scvodarchives", "rel": "noopener noreferrer", "target": "_blank" }, [], document.querySelectorAll(".stream-thumbnail")[0]);
         createEl("img", "", { "title": data.stream.title, "src": data.stream.thumbnail.replace(/{width}/, "250").replace(/{height}/, "141") }, ["thumbnail"], document.querySelectorAll(".stream-thumbnail > a")[0]);
         createEl("span", "🔴", null, ["stream-thumbnail-live"], document.querySelectorAll(".stream-thumbnail")[0], true);
-        titleEl.innerHTML = `<span class="item-title">Playing</span>: ${data.title}`;
-        liquipediaEl.innerHTML =`<span class="item-title">Liquipedia</span>: <a href="${data.liquipedia}" rel="noopener noreferrer" target="_blank"> <img src="https://starcraftvods.com/images/liquipedia.png" class="icon" /></a>`;
-        nextEl.innerHTML = `<span class="item-title">Next Match</span>: ${data.next}`;
-        expansionEl.innerHTML = `<span class="item-title">Expansion</span> ${data.expansion.fullName}`;
-        downloadEl.innerHTML = data.download !== false ? `<span class="item-title">Download Tournament</span>: <a href="https://starcraftvods.com/dl/?${data.download.short_code}" rel="noopener noreferrer" target="_blank">Magnet Link</a> (${data.download.size})` : null;
-
+        createEl("span", "Playing:", null, ["item-title"], titleEl);
+        t = document.createTextNode(` ${data.title}`);
+        titleEl.appendChild(t);
+        createEl("span", "Liquipedia:", null, ["item-title"], liquipediaEl);
+        createEl("a", "", { "href": data.liquipedia, "rel": "noopener noreferrer", "target": "_blank" }, [], liquipediaEl);
+        createEl("img", " ", { "title": "Liquipedia", "src": "https://starcraftvods.com/images/liquipedia.png" }, ["icon"], document.querySelectorAll(".liquipedia > a")[0]);
+        createEl("span", "Next Match:", null, ["item-title"], nextEl);
+        t = document.createTextNode(` ${data.next}`);
+        nextEl.appendChild(t);
+        createEl("span", "Expansion:", null, ["item-title"], expansionEl);
+        t = document.createTextNode(` ${data.expansion.fullName}`);
+        expansionEl.appendChild(t);        
+        data.download !== false ? (createEl("span", "Download Tournament:", null, ["item-title"], downloadEl), createEl("a", " Magnet Link", { "href": `https://starcraftvods.com/dl/?${data.download.short_code}`, "rel": "noopener noreferrer", "target": "_blank" }, [], downloadEl)) : null;
         if (Boolean(data.gstl)){
             playerEl[0].innerHTML = "GSTL VODs don't have player data.";
             document.querySelector(".item.history").remove();
