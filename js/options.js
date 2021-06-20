@@ -19,14 +19,3 @@ for (let o = 0; o < optionEls.length; o++){
         console.log(options);
     });
 }
-
-/*document.querySelector("#playerInfoDetailed").addEventListener("change", (e) => {
-    if (e.target.checked){
-        var info = document.getElementById("playerInfo");
-        info.checked = true;
-        info.disabled = true;
-        info.dispatchEvent(new Event("change"));
-    }else{
-        document.querySelector("#playerInfo").disabled = false;
-    }
-});*/

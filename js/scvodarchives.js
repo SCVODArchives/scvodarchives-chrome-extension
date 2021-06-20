@@ -15,14 +15,6 @@ let updatePanel = (data) => {
         return;
     }
     if (data.stream.type === "live"){
-        console.log(data);
-        //if (data.hasOwnProperty("error")){
-            //let loadingEl = document.getElementsByClassName("loading")[0];
-            //loadingEl.classList.remove("hide-top");
-            //$(".loading").append(`ERROR: ${data.error}`).removeClass("hide-top");
-        //}
-        //if ((data.hasOwnProperty("error")) || (data.download.hasOwnProperty("error"))) return;
-        
         loadingEl.classList.add("hide-top");
         createEl("a", "", { "href": "https://twitch.tv/scvodarchives", "rel": "noopener noreferrer", "target": "_blank" }, [], document.querySelectorAll(".stream-thumbnail")[0]);
         createEl("img", "", { "title": data.stream.title, "src": data.stream.thumbnail.replace(/{width}/, "250").replace(/{height}/, "141") }, ["thumbnail"], document.querySelectorAll(".stream-thumbnail > a")[0]);
@@ -88,8 +80,6 @@ let updatePanel = (data) => {
             if (data.aligulac.history.objects.length > 4) history += `...truncated...<br><a href="http://aligulac.com/results/search/?search=&players=${data.aligulac.history.objects[0].pla.tag}+${data.aligulac.history.objects[0].pla.id}%0D%0A${data.aligulac.history.objects[0].plb.tag}+${data.aligulac.history.objects[0].plb.id}&event=&bestof=all&offline=both&game=all" rel="noopener noreferrer" target="_blank">Click here for full history.</a>`;
         }
     }else{
-        // stream offline
-        //createEl();
         loadingEl.textContent = "Stream OFFLINE";
     }
 }
