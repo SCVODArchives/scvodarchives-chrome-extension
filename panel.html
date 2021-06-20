@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="loading hide-top">
+        <img src="https://starcraftvods.com/images/loading.gif">
+    </div>
+    <div class="container">
+        <button id="options">Options</button>
+        <div class="header">
+            <a href="https://starcraftvods.com/" rel="noopener noreferrer" target="_blank">StarcraftVODs.com</a><br/>
+            <a href="https://twitch.tv/scvodarchives" rel="noopener noreferrer" target="_blank">SCVODArchives on Twitch</a>
+        </div>
+        <div class="info-box">
+            <div class="stream-thumbnail"></div>
+            <div class="title"></div>
+            <div class="expansion"></div>
+            <div class="liquipedia"></div>
+            <div class="download"></div>
+            <div class="item next"></div>
+        </div>
+        <!--<div class="spacer"></div>-->
+        <div class="player player1"></div>
+        <div class="player player2"></div>
+        <div class="item history">
+            <label for="spoilers-on">Match History (SPOILERS)</label>
+            <input name="spoilers-on" id="spoilers-on" type="checkbox" role="button">
+            <div class="history spoiler"></div>
+        </div>
+    </div>
+    <script src="./js/scvodarchives.js" type="text/javascript"></script>
+</body>
+</html>
