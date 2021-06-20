@@ -149,7 +149,7 @@ label[for='spoilers-on']{
 .stream-thumbnail{
     position: relative;
     width: 250px;
-    margin: 0 auto;
+    margin: 5px auto 0px auto;
     margin-bottom: 10px;
 }
 
@@ -167,7 +167,7 @@ label[for='spoilers-on']{
 
 #options{
     position: absolute;
-    right: 7px;
+    right: 10px;
     background-color: #1c374e;
     color: white;
     border: 1px solid #969696;
