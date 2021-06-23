@@ -12,8 +12,6 @@
         "default_popup": "panel.html"
     },
     "permissions": [
-        "contextMenus",
-        "tabs",
         "storage"
     ],
     "icons": {
