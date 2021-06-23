@@ -3,7 +3,7 @@
     
     "name": "SCVODArchives Helper",
     "description": "Get all the SCVODArchives stream information you need",
-    "version": "0.1",
+    "version": "0.7",
     "background": {
         "scripts": ["background.js"]
     },
