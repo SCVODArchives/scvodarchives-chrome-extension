@@ -12,3 +12,6 @@ This chrome extension provides informaton about the stream such as:
 The extension is currently unlisted and can only be accessed via the link below.
 
 https://chrome.google.com/webstore/detail/scvodarchives-helper/nijgindkibdlladoidejjmihnpckocae
+
+## ISSUES
+In rare cases where there are name collisions (herO & HerO), the data could be incorrect. No solution at this time.
